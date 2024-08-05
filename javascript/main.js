@@ -53,14 +53,14 @@ const startProcessing = () => {
     // Your code goes here
 
         const section = document.createElement("section");
-        section.className = "product-list"
-        const newProducts = []
+        section.className = "product-list";
+        const newProducts = [];
 
         for (let i = 0; i < products.length; i++){
             if (products[i].inStock === true){
-                let productValue = products[i].price * products[i].quantity
+                let productValue = products[i].price * products[i].quantity;
                 if (products[i].category === discountCategory){
-                    productValue = productValue * (1 - discountRate)
+                    productValue = productValue * (1 - discountRate);
                 }
 
                 product = {
@@ -68,7 +68,7 @@ const startProcessing = () => {
                     category: products[i].category,
                     discountedTotalValue: productValue 
                 }
-                newProducts.push(product)
+                newProducts.push(product);
 
                 section.innerHTML = ` 
                     <h3>${product}</h3>
@@ -76,7 +76,7 @@ const startProcessing = () => {
             }
         }
         
-        return newProducts 
+        return newProducts;
     };
 
 startProcessing()
